@@ -46,12 +46,25 @@ its action items showing up on the tracker - that's intentional, not a bug.
 
 ## Installation
 
-Drop the `manager-1on1-prep/` folder into wherever your Claude setup looks
-for skills (e.g. a Claude Code project's `.claude/skills/`, or install the
-packaged `.skill` file directly in Cowork/Claude.ai if your org allows
-skill uploads). Then just ask Claude to set up your 1:1 prep - the skill's
-description is written to trigger on natural phrasing like "help me stay on
-top of my 1:1s" or "remind me what to bring up before my 1:1 with X."
+**Claude Code:** drop the `manager-1on1-prep/` folder into wherever your
+Claude setup looks for skills (e.g. a project's `.claude/skills/`), or
+install straight from the repo:
+
+```bash
+/plugin marketplace add lemaiyan/pollyskills
+/plugin install manager-1on1-prep@pollyskills
+```
+
+**Claude.ai / Cowork:** upload the packaged `.skill` file via Skills in the
+UI, if your org allows skill uploads. Grab a pre-built one from the
+[latest release](https://github.com/lemaiyan/pollyskills/releases/latest),
+or build it yourself with `scripts/package-skill.sh claude/manager-1on1-prep`
+from the repo root.
+
+Either way, once it's installed just ask Claude to set up your 1:1 prep -
+the skill's description is written to trigger on natural phrasing like
+"help me stay on top of my 1:1s" or "remind me what to bring up before my
+1:1 with X."
 
 ## Limitations
 
@@ -68,4 +81,4 @@ top of my 1:1s" or "remind me what to bring up before my 1:1 with X."
 
 ## License
 
-MIT - see the [repo license](../LICENSE).
+MIT - see the [repo license](../../LICENSE).

@@ -47,6 +47,18 @@ flag something.
 
   Output lands in `dist/`, which is gitignored - don't commit `.skill` files.
 
+## Cutting a release
+
+Pushing a tag like `v0.2.0` triggers `.github/workflows/release.yml`, which
+validates every `SKILL.md`, packages all skills into `.skill` files, and
+publishes a GitHub release with them attached - no manual `gh release
+create` needed:
+
+```bash
+git tag v0.2.0
+git push origin v0.2.0
+```
+
 ## Pull requests
 
 - Keep PRs scoped to one skill (or the shared repo files) at a time where

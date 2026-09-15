@@ -53,12 +53,25 @@ transcription slip you'd normally just re-read and fix.
 
 ## Installation
 
-Drop the `report-1on1-prep/` folder into wherever your Claude setup looks for
-skills (e.g. a Claude Code project's `.claude/skills/`, or install the
-packaged `.skill` file directly in Cowork/Claude.ai if your org allows skill
-uploads). Then just ask Claude to help you prep for your 1:1s - the skill's
-description is written to trigger on natural phrasing like "help me prep for
-my 1:1 with my manager" or "remind me what I wanted to bring up next time."
+**Claude Code:** drop the `report-1on1-prep/` folder into wherever your
+Claude setup looks for skills (e.g. a project's `.claude/skills/`), or
+install straight from the repo:
+
+```bash
+/plugin marketplace add lemaiyan/pollyskills
+/plugin install report-1on1-prep@pollyskills
+```
+
+**Claude.ai / Cowork:** upload the packaged `.skill` file via Skills in the
+UI, if your org allows skill uploads. Grab a pre-built one from the
+[latest release](https://github.com/lemaiyan/pollyskills/releases/latest),
+or build it yourself with `scripts/package-skill.sh claude/report-1on1-prep`
+from the repo root.
+
+Either way, once it's installed just ask Claude to help you prep for your
+1:1s - the skill's description is written to trigger on natural phrasing
+like "help me prep for my 1:1 with my manager" or "remind me what I wanted
+to bring up next time."
 
 ## Relationship to manager-1on1-prep
 
@@ -85,4 +98,4 @@ be merged, since the framing and the tracked categories genuinely differ.
 
 ## License
 
-MIT - see the [repo license](../LICENSE).
+MIT - see the [repo license](../../LICENSE).
