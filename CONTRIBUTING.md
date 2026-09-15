@@ -51,13 +51,17 @@ flag something.
 
 Releases are handled by [release-please](https://github.com/googleapis/release-please) (`.github/workflows/release-please.yml`), which reads
 [Conventional Commits](https://www.conventionalcommits.org/) to figure out
-the next version and changelog. Write commit messages accordingly:
+the next version and changelog. First line of the commit message is
+`<prefix>: <summary>`:
 
-- `fix: ...` - patch bump
-- `feat: ...` - minor bump
-- `feat!: ...` or a `BREAKING CHANGE:` footer - major bump
-- `chore: ...`, `docs: ...`, `refactor: ...` - no version bump, but still
-  shows up in the changelog
+| Prefix | Effect | Example |
+|---|---|---|
+| `fix:` | patch bump (0.1.0 -> 0.1.1) | `fix: correct broken LICENSE link in skill READMEs` |
+| `feat:` | minor bump (0.1.0 -> 0.2.0) | `feat: add chatgpt platform folder` |
+| `feat!:` or a `BREAKING CHANGE:` footer | major bump (0.1.0 -> 1.0.0) | `feat!: restructure skill folder layout` |
+| `chore:`, `docs:`, `refactor:`, `style:`, `test:`, `ci:` | no version bump, still listed in the changelog | `docs: clarify installation steps` |
+
+Scoping is optional, e.g. `fix(readme): ...`, if you want to be more specific.
 
 Every push to `main` updates (or opens) a "chore: release X.Y.Z" PR that
 accumulates the changelog. Merging that PR is what actually cuts the
