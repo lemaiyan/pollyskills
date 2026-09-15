@@ -1,0 +1,18 @@
+{
+  "name": "pollyskills",
+  "owner": {
+    "name": "George Kamunya"
+  },
+  "plugins": [
+    {
+      "name": "manager-1on1-prep",
+      "source": "./claude/manager-1on1-prep",
+      "description": "1:1 prep automation for people managers: tracks action items per report, reminds you before each 1:1, rolls up before a weekly review."
+    },
+    {
+      "name": "report-1on1-prep",
+      "source": "./claude/report-1on1-prep",
+      "description": "1:1 prep automation for your own 1:1 with your manager: running agenda, follow-ups on both sides, reminders."
+    }
+  ]
+}

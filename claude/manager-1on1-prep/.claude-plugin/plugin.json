@@ -1,0 +1,8 @@
+{
+  "name": "manager-1on1-prep",
+  "description": "1:1 prep automation for people managers: tracks action items per report, reminds you before each 1:1, rolls up before a weekly review.",
+  "version": "1.0.0",
+  "author": {
+    "name": "George Kamunya"
+  }
+}
