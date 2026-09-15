@@ -13,6 +13,8 @@ A growing collection of AI assistant skills I've built for my own day-to-day wor
 
 More to come, for Claude and other platforms, as I build them. Writeups for individual skills, including the reasoning behind specific design decisions, get published at [blog.georgekamunya.com](https://blog.georgekamunya.com).
 
+Just want the packaged files without cloning the repo? Grab them from [Releases](https://github.com/lemaiyan/pollyskills/releases/latest).
+
 ## Installing a skill
 
 **Claude Code**, the fastest way - add this repo as a plugin marketplace and install straight from it:
@@ -29,13 +31,13 @@ Or the manual way, which works anywhere Claude Code looks for skills:
 3. Ask Claude naturally to set it up, each skill's README has example phrasing.
 4. Answer whatever setup questions it asks you.
 
-**Claude.ai / Cowork** - these need a packaged `.skill` file rather than a raw folder:
+**Claude.ai / Cowork** - these need a packaged `.skill` file rather than a raw folder. Grab one pre-built from the [latest release](https://github.com/lemaiyan/pollyskills/releases/latest), or build it yourself:
 
 ```bash
 scripts/package-skill.sh claude/manager-1on1-prep   # or --all
 ```
 
-Upload the resulting file from `dist/` via Skills in the UI, if your org allows skill uploads.
+Either way, upload the `.skill` file via Skills in the Claude.ai/Cowork UI, if your org allows skill uploads.
 
 ## Platform
 
