@@ -47,17 +47,24 @@ flag something.
 
   Output lands in `dist/`, which is gitignored - don't commit `.skill` files.
 
-## Cutting a release
+## Commit messages and releases
 
-Pushing a tag like `v0.2.0` triggers `.github/workflows/release.yml`, which
-validates every `SKILL.md`, packages all skills into `.skill` files, and
-publishes a GitHub release with them attached - no manual `gh release
-create` needed:
+Releases are handled by [release-please](https://github.com/googleapis/release-please) (`.github/workflows/release-please.yml`), which reads
+[Conventional Commits](https://www.conventionalcommits.org/) to figure out
+the next version and changelog. Write commit messages accordingly:
 
-```bash
-git tag v0.2.0
-git push origin v0.2.0
-```
+- `fix: ...` - patch bump
+- `feat: ...` - minor bump
+- `feat!: ...` or a `BREAKING CHANGE:` footer - major bump
+- `chore: ...`, `docs: ...`, `refactor: ...` - no version bump, but still
+  shows up in the changelog
+
+Every push to `main` updates (or opens) a "chore: release X.Y.Z" PR that
+accumulates the changelog. Merging that PR is what actually cuts the
+release: release-please tags it and publishes the GitHub release, then a
+second job in the same workflow validates every `SKILL.md`, packages all
+skills into `.skill` files, and attaches them to that release - no manual
+tagging or `gh release create` needed.
 
 ## Pull requests
 
