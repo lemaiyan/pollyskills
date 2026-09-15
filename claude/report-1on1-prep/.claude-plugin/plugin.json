@@ -1,7 +1,7 @@
 {
   "name": "report-1on1-prep",
   "description": "1:1 prep automation for your own 1:1 with your manager: running agenda, follow-ups on both sides, reminders.",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "George Kamunya"
   }
